@@ -1,0 +1,10 @@
+.App {
+	padding: 35px 0 45px 0;
+}
+
+.App__title {
+	color: #fff;
+	font-size: 48px;
+	text-align: center;
+	margin-bottom: 25px;
+}
