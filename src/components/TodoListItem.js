@@ -1,13 +1,25 @@
 import './TodoListItem.css'
+import { GrTrash, GrCheckmark } from 'react-icons/gr'
 
-function TodoListItem({ todo, deleteTodoHandler }) {
+function TodoListItem({ todo, deleteTodoHandler, toggleTodoHandler }) {
   return (
     <>
-      <li className="TodoListItem">
-        <p>{todo}</p>
-        <button className="TodoListItem__remove" onClick={deleteTodoHandler}>
-          Remove
-        </button>
+      <li className={`TodoListItem ${todo.isCompleted ? 'completed' : ''}`}>
+        <p className="TodoListItem__text">{todo.value}</p>
+        <div className="TodoListItem__btns">
+          <button
+            className="TodoListItem__btn"
+            onClick={() => deleteTodoHandler(todo.id)}
+          >
+            <GrTrash />
+          </button>
+          <button
+            className="TodoListItem__btn"
+            onClick={() => toggleTodoHandler(todo.id)}
+          >
+            <GrCheckmark />
+          </button>
+        </div>
       </li>
     </>
   )

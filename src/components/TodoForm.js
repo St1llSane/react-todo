@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './TodoForm.css'
 
-function TodoForm({ handlerAddTodo }) {
+function TodoForm({ addTodoHandler }) {
   const [value, setValue] = useState('')
 
   const onSubmitHandler = (e) => {
@@ -9,7 +9,7 @@ function TodoForm({ handlerAddTodo }) {
 
     if (value.length < 3) return
 
-    handlerAddTodo(value)
+    addTodoHandler(value)
     setValue('')
   }
 

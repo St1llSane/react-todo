@@ -1,0 +1,13 @@
+.Button {
+	font-size: 22px;
+	line-height: 0;
+	padding: 12px 20px;
+	border: 2px solid transparent;
+	border-radius: 14px;
+	background-color: #f0f0f0;
+	transition: background-color .3s ease;
+}
+
+.Button:hover {
+	background-color: #dfdfdf;
+}

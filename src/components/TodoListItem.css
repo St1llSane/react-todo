@@ -6,40 +6,91 @@
   border-radius: 50px;
   padding: 0 4px 0 30px;
   background-color: #f0f0f0;
-	box-shadow: 0 1px 20px #dfdfdf;
+  box-shadow: 0 1px 20px #dfdfdf;
   display: flex;
   justify-content: space-between;
   align-items: center;
-	cursor: pointer;
-	animation: show .3s ease 1;
-	transition: border-color 0.3s ease-out;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  animation: show 0.3s ease 1;
 }
 
 @keyframes show {
-	0% {
-		opacity: 0;
-	} 
-	100% {
-		opacity: 1;
-	}
-}
-
-.TodoListItem:hover {
-  border-color: #c5c5c5;
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .TodoListItem + .TodoListItem {
   margin-top: 18px;
 }
 
-.TodoListItem__remove {
-  height: calc(100% - 8px);
-  padding: 0 34px;
-  background-color: #fff;
-  border-radius: 50px;
-  transition: background-color 0.3s ease;
+.TodoListItem:hover {
+  border-color: #c5c5c5;
 }
 
-.TodoListItem__remove:hover {
+.TodoListItem__btn {
+  line-height: 0;
+  padding: 0 21px;
+	height: 35px;
+  background-color: #fff;
+  border-radius: 50px;
+  margin-left: 3px;
+  transition: all 0.3s ease;
+}
+
+.TodoListItem__btn:hover {
   background-color: #dfdfdf;
+}
+
+.TodoListItem__btn svg {
+  transition: all 0.3s ease;
+}
+
+.TodoListItem__btn:nth-child(1) {
+	font-size: 15px;
+}
+
+.TodoListItem__btn:nth-child(2) {
+	font-size: 16px;
+}
+
+.TodoListItem__btn:hover svg {
+  transform: scale(1.2);
+}
+
+.TodoListItem__btn:nth-child(1) svg path,
+.TodoListItem__btn:nth-child(2) svg polyline {
+  transition: all 0.3s ease;
+}
+
+.TodoListItem__btn:nth-child(1):hover svg path {
+  stroke: #e63030;
+}
+
+.TodoListItem__btn:nth-child(2):hover svg polyline {
+  stroke: #049604;
+}
+
+
+.TodoListItem.completed {
+	background-color: #fff;
+	border-color: #81db81;
+}
+.TodoListItem.completed:hover {
+	border-color: #049604;
+}
+
+.TodoListItem.completed .TodoListItem__btn {
+  background-color: #f0f0f0;
+}
+.TodoListItem.completed .TodoListItem__btn:hover {
+	background-color: #c5c5c5;
+}
+
+.TodoListItem.completed .TodoListItem__btn:nth-child(2) svg polyline {
+	stroke: #049604;
 }

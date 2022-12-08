@@ -1,0 +1,7 @@
+.TodoActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
+	margin: 25px 0 40px 0;
+}
