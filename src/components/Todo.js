@@ -16,7 +16,6 @@ function Todo() {
     }
 
     setTodos([...todos, newTodo])
-    console.log(todos)
   }
 
   const deleteTodoHandler = (id) => {
@@ -37,17 +36,23 @@ function Todo() {
     setTodos([])
   }
 
-	const resetCompletedTodosHandler = () => {
-		setTodos(todos.map((todo) => {
-			
-		}))
-	}
+  const completedTodosCount = todos.filter(
+    (todo) => todo.isCompleted === true
+  ).length
+
+  const resetCompletedTodosHandler = () => {
+    setTodos(todos.filter((todo) => todo.isCompleted === false))
+  }
 
   return (
     <div className="Todo">
       <TodoForm addTodoHandler={addTodoHandler} />
       {todos.length > 0 && (
-        <TodoActions resetTodosHandler={resetTodosHandler} />
+        <TodoActions
+          resetTodosHandler={resetTodosHandler}
+          resetCompletedTodosHandler={resetCompletedTodosHandler}
+          completedTodosCount={!!completedTodosCount}
+        />
       )}
       <TodoList
         todos={todos}

@@ -5,3 +5,29 @@
   column-gap: 12px;
 	margin: 25px 0 40px 0;
 }
+
+.Button {
+	font-size: 22px;
+	line-height: 0;
+	padding: 12px 20px;
+	border: 2px solid transparent;
+	border-radius: 14px;
+	background-color: #f0f0f0;
+	transition: background-color .3s ease;
+}
+
+.Button:hover {
+	background-color: #dfdfdf;
+}
+
+.Button:disabled {
+	background-color: #f3f3f3;
+}
+
+.Button svg {
+	transition: color .3s ease;
+}
+
+.Button:disabled svg {
+	color: #b6b6b6;
+}
